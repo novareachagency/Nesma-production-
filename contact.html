@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nesma Digital</title>
+    <link rel="stylesheet" href="Homestyle.css" >
+    <link rel="stylesheet" href="aboutstyles.css" >
+    <link rel="stylesheet" href="servicesstyle.css">
+    <link rel="stylesheet" href="contactstyles.css">
+    <link rel="stylesheet" href="ourworkstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="circular-loader">
+            <svg class="circular-progress" viewBox="0 0 100 100">
+                <circle class="progress-bg" cx="50" cy="50" r="45" />
+                <circle class="progress-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="loading-number" id="loadingNumber">0%</div>
+        </div>
+        <p class="loading-text">Loading Mesmer Digital...</p>
+    </div>
+
+    <!-- Navigation (Styled like Our Work) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">ነስማ ፕሮዳክሽን</h2>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="nesmadigital.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ourwork.html" class="nav-link">Our Works</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="contact-container">
+            <h1 class="animate-title">Get In Touch</h1>
+            <p class="contact-subtitle animate-text">Ready to transform your digital presence? Get in touch with us today.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item animate-item">
+                        <h3>📧 Email</h3>
+                        <p>zidubaba88@gmail.com</p>
+                    </div>
+                    <div class="contact-item animate-item">
+                        <h3>📞 Phone</h3>
+                        <p>0910992608</p>
+                        <p>0926390788</p>
+                    </div>
+                    <div class="contact-item animate-item">
+                        <h3>📍 Location</h3>
+                        <p>Bethel Square</p>
+                    </div>
+                    <div class="contact-item animate-item">
+                        <p>Follow us on social media:</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/NesmaProduction" target="_blank" aria-label="Facebook">
+                                <img src="img/icons/Professional 3D Facebook Logo - Social Media Icon.jfif" alt="Facebook">
+                            </a>
+                            <a href="https://www.instagram.com/nesmaproduction" target="_blank" aria-label="Instagram">
+                                <img src="img/icons/Instagram Circle Button Icon by Natanaelginting.jfif" alt="Instagram">
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCu2kxNkPLhm9QoDMPugF39g" target="_blank" aria-label="YouTube">
+                                <img src="img/icons/yt.png" alt="YouTube">
+                            </a>
+                            <a href="https://t.me/nesma_production1" target="_blank" aria-label="Telegram">
+                                <img src="img/icons/Telegram Logo PNG.jfif" alt="Telegram">
+                            </a>
+                            <a href="https://www.tiktok.com/@nesma_production?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+                                <img src="img/icons/Download Tiktok 3d Icon.jfif" alt="TikTok">
+                            </a>
+                            <a href="mailto:zidubaba88@gmail.com" aria-label="Email">
+                                <img src="img/icons/Gmail logo.jfif" alt="Email">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web3Forms Contact Form -->
+                <form class="contact-form animate-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="00f70b7c-dbca-468c-8625-508dbeb2d26d">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone Number" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="service" placeholder="What service are you interested in?" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required class="form-textarea"></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn">Send Message</button>
+                </form>
+            </div>
+           
+    </section>
+     <footer>
+        <p>&copy; 2025 Nesma Digital. Crafting unforgettable visual stories.
+            <br>
+            This Website is developed by Mohammed Abdu 
+            <br>Contact:
+            0925591826
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.getElementById('navMenu');
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loadingScreen');
+            const progressFill = document.querySelector('.progress-fill');
+            const loadingNumber = document.getElementById('loadingNumber');
+            const circumference = 283;
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 12;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    loadingNumber.textContent = '100%';
+                    progressFill.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 300);
+                } else {
+                    loadingNumber.textContent = Math.round(progress) + '%';
+                    progressFill.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+                }
+            }, 120);
+
+            // Animate Content on Load
+            setTimeout(() => {
+                document.querySelector('.animate-title')?.classList.add('visible');
+                setTimeout(() => {
+                    document.querySelector('.animate-text')?.classList.add('visible');
+                }, 200);
+                document.querySelectorAll('.animate-item').forEach((item, i) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 400 + i * 150);
+                });
+                setTimeout(() => {
+                    document.querySelector('.animate-form')?.classList.add('visible');
+                }, 1000);
+                setTimeout(() => {
+                    document.querySelector('.animate-map')?.classList.add('visible');
+                }, 1200);
+            }, 600);
+        });
+    </script>
+</body>
+</html>

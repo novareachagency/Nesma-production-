@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us -  Nesma Digital</title>
+     <link rel="stylesheet" href="Homestyle.css" >
+    <link rel="stylesheet" href="aboutstyles.css" >
+    <link rel="stylesheet" href="servicesstyle.css">
+    <link rel="stylesheet" href="contactstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="circular-loader">
+            <svg class="circular-progress" viewBox="0 0 100 100">
+                <circle class="progress-bg" cx="50" cy="50" r="45" />
+                <circle class="progress-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="loading-number" id="loadingNumber">0%</div>
+        </div>
+        <p class="loading-text">Loading Mesmer Digital...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">ነስማ ፕሮዳክሽን</h2>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="nesmadigital.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ourwork.html" class="nav-link">Our Works</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-page">
+        <div class="about-container">
+            <!-- Unified Rotating Logo -->
+            <div class="logo-animated-circle">
+                <img src="img/logos/logo1.png" alt="Mesmer Digital Logo">
+            </div>
+
+            <h1 class="animate-text-border" data-text="About Us">About Us</h1>
+
+            <div class="about-content">
+                <div class="content-box">
+                    <h3>✨ Unforgettable Visual Experiences</h3>
+                    <p>At Mesmer Digital, we create powerful visuals and digital experiences that make every moment unforgettable.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>🎥 Event & Content Specialization</h3>
+                    <p>We specialize in event videography, photography, cinematic editing, and social media content creation for all types of special events — from weddings and birthdays to corporate functions and graduations.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>🚀 Full Digital Marketing Support</h3>
+                    <p>Our team also provides professional video editing, promotional business videos, short highlight reels, YouTube content creation, and full digital marketing support.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>🎯 High-Quality, Impactful Results</h3>
+                    <p>Whether you're building your brand or capturing life’s biggest moments, we deliver high-quality, creative, and impactful results.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+  <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nesma Production. Crafting unforgettable visual stories.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Loading Animation
+            const loadingScreen = document.getElementById('loadingScreen');
+            const progressFill = document.querySelector('.progress-fill');
+            const loadingNumber = document.getElementById('loadingNumber');
+            const circumference = 2 * Math.PI * 45;
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    loadingNumber.textContent = '100%';
+                    progressFill.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 300);
+                } else {
+                    loadingNumber.textContent = Math.round(progress) + '%';
+                    progressFill.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+                }
+            }, 120);
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.getElementById('navMenu');
+
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Animate content boxes
+            setTimeout(() => {
+                document.querySelectorAll('.content-box').forEach((box, i) => {
+                    setTimeout(() => {
+                        box.classList.add('visible');
+                    }, 300 + i * 250);
+                });
+            }, 800);
+        });
+    </script>
+</body>
+</html>
